@@ -1,3 +1,4 @@
+// source : https://github.com/anyascii/anyascii
 import block from './helpers/any-ascii-block.js';
 
 const blocks = {};
