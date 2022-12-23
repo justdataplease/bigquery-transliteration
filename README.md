@@ -3,7 +3,7 @@
 ## How to reproduce
 
 *If you want to just test or use stemming functionality in BigQuery, without implementing it,
-go to — 7. Stemmers Demo.
+go to — 7. Transliteration Demo.
 
 ### 1. Clone the repository
 
@@ -25,9 +25,14 @@ go to — 7. Stemmers Demo.
 
     gsutil cp dist/transliteration.js gs://yourbucket
 
-### 6. Implement Transliteration
+### 7. Transliteration Demo
 
-As an example, we will translate the following English sentence into Greek and Spanish.
+As an example, we will transliterate the following Greek sentence.
 
-"Natural language processing is a subfield of linguistics computer science and artificial intelligence concerned with
-the interactions between computers and human language"
+"Το αυτοκίνητο ή αμάξι είναι τροχοφόρο επιβατικό όχημα με ενσωματωμένο κινητήρα που χρησιμοποιείται για μεταφορές."
+
+    -- Define corpus
+    DECLARE grString STRING;
+    SET grString = "Το αυτοκίνητο ή αμάξι είναι τροχοφόρο επιβατικό όχημα με ενσωματωμένο κινητήρα που χρησιμοποιείται για μεταφορές.";
+
+    SELECT justfunctions.eu.transliterate_anyascii(grString)
